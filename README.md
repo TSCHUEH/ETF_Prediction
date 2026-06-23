@@ -1,6 +1,6 @@
 # 📈 AI 智能量化預測終端 (AI Quant Prediction Terminal)
 
-> **結合動態特徵提取與時間序列演算法，為台股與 ETF 提供機構級趨勢洞察的 Web 應用程式。**
+> **結合動態特徵提取與時間序列演算法，為台股 ETF 提供趨勢洞察。**
 
 本專題旨在運用預測模型拆解 ETF 歷史規律，並透過視覺化決策面板呈現合理價格區間，藉此排除主觀偏誤，為進場時機提供客觀的量化依據。
 > https://etfprediction-azeyw6n3qn4kgq6wyjgumd.streamlit.app/
