@@ -77,7 +77,7 @@ if not st.session_state.searched:
 # ================= 3. 儀表板模式 =================
 else:
     ticker = st.session_state.current_ticker
-    st.markdown(f"<h1>📊 {ticker} 智能預測與風險分析看板</h1>", unsafe_allow_html=True)
+    st.markdown(f"<h1>📊 {ticker} 價格預測與風險分析看板</h1>", unsafe_allow_html=True)
     
     st.sidebar.header("🔍 ETF搜尋")
     with st.sidebar.form(key='sidebar_search_form'):
