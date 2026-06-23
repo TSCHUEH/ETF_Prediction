@@ -230,7 +230,7 @@ else:
     fig_interactive.add_trace(go.Scatter(
         x=test_df['ds'], y=test_df['y'], mode='markers', 
         marker=dict(color='#DC2626', size=5, symbol='circle'), 
-        name='預測價格', hovertemplate='<b>實際價格</b>: %{y:.2f}<extra></extra>'
+        name='實際價格', hovertemplate='<b>實際價格</b>: %{y:.2f}<extra></extra>'
     ))
     
     fig_interactive.update_layout(
