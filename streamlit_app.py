@@ -95,7 +95,7 @@ else:
     base_data = pd.DataFrame()
     with st.spinner(f"正在從雲端數據庫解析 {ticker_query} 的市場特徵，請稍候..."):
         try:
-            base_data = yf.download(ticker_query, period="5y", progress=False)
+            base_data = yf.download(ticker_query, period="max", progress=False)
         except Exception as e:
             pass
             
