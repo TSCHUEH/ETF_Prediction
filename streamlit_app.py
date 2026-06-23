@@ -157,9 +157,9 @@ else:
     """, unsafe_allow_html=True)
     
     trend_flexibility = st.sidebar.slider("📈 趨勢敏感度 (Changepoint)", 0.01, 0.50, auto_trend, step=0.01)
-    history_years = st.sidebar.slider("📚 歷史訓練窗格 (年)", 1, 10, auto_hist)
-    blind_test_days = st.sidebar.slider("🕵️ 盲測驗證區間 (天)", 15, 180, auto_blind)
-    predict_days = st.sidebar.slider("🔮 未來推演區間 (天)", 30, 180, 90)
+    history_years = st.sidebar.slider("📚 訓練資料天數 (年)", 1, 10, auto_hist)
+    blind_test_days = st.sidebar.slider("📚 驗證資料天數 (天)", 15, 180, auto_blind)
+    predict_days = st.sidebar.slider("📚 未來預測資料天數 (天)", 30, 180, 90)
     week_season = st.sidebar.checkbox("開啟週間季節性 (捕捉短期波動)", value=auto_week)
 
     # 資料裁切
