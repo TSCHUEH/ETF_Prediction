@@ -142,7 +142,7 @@ else:
         )
 
     # --- 側邊欄：智能建議與自由調整 ---
-    st.sidebar.header("🧠 參數微調 (載入智能預設)")
+    st.sidebar.header("🧠 參數設定 ")
     
     # 使用自訂 HTML，呈現極致專業的數據戰情卡片
     st.sidebar.markdown(f"""
