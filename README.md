@@ -3,7 +3,7 @@
 > **結合動態特徵提取與時間序列演算法，為台股與 ETF 提供機構級趨勢洞察的 Web 應用程式。**
 
 本專案旨在解決散戶投資人常因新聞炒作而追高殺低之痛點。系統透過嚴謹的量化演算法與歷史數據回測，為使用者提供客觀的歷史規律拆解、未來價格推演，以及極端溢價的風險警示。
-https://etfprediction-azeyw6n3qn4kgq6wyjgumd.streamlit.app/
+> https://etfprediction-azeyw6n3qn4kgq6wyjgumd.streamlit.app/
 
 ---
 
