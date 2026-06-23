@@ -1,6 +1,6 @@
 # 📈 台股 ETF 趨勢預測分析
 
-> **結合動態特徵提取與時間序列演算法，為台股 ETF 提供趨勢洞察。**
+> **基於 Prophet 演算法的 ETF 趨勢分析工具，為台股 ETF 提供趨勢洞察。**
 
 本專題旨在運用預測模型拆解 ETF 歷史規律，並透過視覺化決策面板呈現合理價格區間，藉此排除主觀偏誤，為進場時機提供客觀的量化依據。
 > https://etfprediction-azeyw6n3qn4kgq6wyjgumd.streamlit.app/
