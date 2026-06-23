@@ -1,4 +1,4 @@
-# 📈 AI 智能量化預測終端 (AI Quant Prediction Terminal)
+# 📈 台股 ETF 趨勢預測分析
 
 > **結合動態特徵提取與時間序列演算法，為台股 ETF 提供趨勢洞察。**
 
