@@ -225,7 +225,7 @@ else:
     fig_interactive = plot_plotly(model, forecast)
     for trace in fig_interactive['data']:
         if trace.name:
-            trace.name = trace.name.replace('Actual', '實際價格').replace('Predicted', 'AI 基準預測線').replace('yhat_lower', '下限').replace('yhat_upper', '上限')
+            trace.name = trace.name.replace('Actual', '實際價格').replace('Predicted', '模型預測價格').replace('yhat_lower', '下限').replace('yhat_upper', '上限')
     
     fig_interactive.add_trace(go.Scatter(
         x=test_df['ds'], y=test_df['y'], mode='markers', 
@@ -234,7 +234,6 @@ else:
     ))
     
     fig_interactive.update_layout(
-        title=dict(text=f"Prophet Time-Series Forecast (MAPE: {mape:.2f}%)", font=dict(size=16)),
         hovermode="x unified", 
         hoverdistance=1,     # 縮小滑鼠磁鐵的吸附半徑 (避免吸到隔天的黑點)
         spikedistance=1,     # 縮小垂直參考線的判定範圍
