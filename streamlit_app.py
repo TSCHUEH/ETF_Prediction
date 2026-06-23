@@ -188,10 +188,13 @@ else:
     mape = np.mean(np.abs((merged['y'] - merged['yhat']) / merged['y'])) * 100 if not merged.empty else 0
 
     # ================= 回歸經典 4 大 KPI =================
-    current_price = data['Close'].iloc[-1]
-    yearly_return = ((current_price - data['Close'].iloc[-252]) / data['Close'].iloc[-252]) * 100 if len(data) > 252 else 0
-    rolling_max = data['Close'].cummax()
-    max_drawdown = (data['Close'] / rolling_max - 1.0).min() * 100
+    clean_close = data['Close'].dropna() 
+    current_price = clean_close.iloc[-1]
+    # 使用清理過的資料來算報酬率，避免 nan 污染
+    yearly_return = ((current_price - clean_close.iloc[-252]) / clean_close.iloc[-252]) * 100 if len(clean_close) > 252 else 0
+    
+    rolling_max = clean_close.cummax()
+    max_drawdown = (clean_close / rolling_max - 1.0).min() * 100
     
     col1, col2, col3, col4 = st.columns(4)
     col1.metric("最新收盤價 (TWD)", f"{current_price:.2f}")
