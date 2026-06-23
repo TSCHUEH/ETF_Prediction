@@ -125,7 +125,7 @@ else:
     rsi = 100 - (100 / (1 + rs))
     current_rsi = rsi.iloc[-1]
     
-    # --- 🚀 專業量化模型判定邏輯 (極致純淨數據版) ---
+    # --- 🚀 專業量化模型判定邏輯 ---
     if calculated_volatility > 18.0 or current_rsi > 70:
         model_name = "短線動能追蹤模型"
         auto_trend, auto_hist, auto_blind, auto_week = 0.20, 2, 30, True
