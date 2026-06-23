@@ -11,7 +11,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # ================= 1. 網頁基礎設定 =================
-st.set_page_config(page_title="AI 智能量化預測終端", layout="wide", page_icon="📈")
+st.set_page_config(page_title="台股 ETF 趨勢預測分析", layout="wide", page_icon="📈")
 
 # --- 注入自訂 CSS (側邊欄字體微縮與排版優化) ---
 st.markdown("""
@@ -59,8 +59,8 @@ def execute_search(input_ticker):
 # ================= 2. 介面邏輯：首頁 =================
 if not st.session_state.searched:
     st.markdown("<br><br><br><br><br>", unsafe_allow_html=True)
-    st.markdown("<h1 style='text-align: center; font-size: 3.5rem;'>📈 AI 智能量化預測終端</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center; color: gray; font-size: 1.2rem;'>結合動態特徵提取與時間序列演算法，提供機構級趨勢洞察</p><br>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; font-size: 3.5rem;'>📈 台股 ETF 趨勢預測分析</h1>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center; color: gray; font-size: 1.2rem;'>基於 Prophet 演算法的 ETF 趨勢分析工具</p><br>", unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
