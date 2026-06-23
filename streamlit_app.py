@@ -59,7 +59,7 @@ def execute_search(input_ticker):
 # ================= 2. 介面邏輯：首頁 =================
 if not st.session_state.searched:
     st.markdown("<br><br><br><br><br>", unsafe_allow_html=True)
-    st.markdown("<h1 style='text-align: center; font-size: 3.5rem;'>📈 台股 ETF 趨勢預測分析</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; font-size: 3.5rem;'>台股 ETF 趨勢預測分析</h1>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; color: gray; font-size: 1.2rem;'>基於 Prophet 演算法的 ETF 趨勢分析工具</p><br>", unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns([1, 2, 1])
