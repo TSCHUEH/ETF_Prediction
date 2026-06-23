@@ -79,7 +79,7 @@ else:
     ticker = st.session_state.current_ticker
     st.markdown(f"<h1>📊 {ticker} 智能預測與風險分析看板</h1>", unsafe_allow_html=True)
     
-    st.sidebar.header("🔍 終端搜尋")
+    st.sidebar.header("🔍 ETF搜尋")
     with st.sidebar.form(key='sidebar_search_form'):
         new_input = st.text_input("輸入新代碼", ticker, label_visibility="collapsed")
         new_submit = st.form_submit_button("重新分析", use_container_width=True)
