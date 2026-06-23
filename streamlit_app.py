@@ -213,24 +213,24 @@ else:
     st.markdown("---")
 
     # ================= 2️⃣ AI 預測趨勢與盲測對比 =================
-    st.markdown("<h3>2️⃣ AI 預測趨勢與盲測對比</h3>", unsafe_allow_html=True)
+    st.markdown("<h3>2️⃣ 預測趨勢圖</h3>", unsafe_allow_html=True)
     
     if mape < 5:
-        st.success(f"🎯 **盲測準確度極高！** 歷史軌跡完美契合，平均誤差 (MAPE) 僅 {mape:.2f}%")
+        st.success(f"🎯 **分析準確度極高！** 歷史軌跡完美契合，平均誤差 (MAPE) 僅 {mape:.2f}%")
     elif mape < 10:
-        st.info(f"📊 **盲測準確度良好。** 趨勢符合模型預期，平均誤差 (MAPE) 為 {mape:.2f}%")
+        st.info(f"📊 **分析準確度良好。** 趨勢符合模型預期，平均誤差 (MAPE) 為 {mape:.2f}%")
     else:
-        st.warning(f"⚠️ **盲測落差顯著 (MAPE: {mape:.2f}%)**。實際價格突破 AI 長線預測，顯示近期發生極端溢價或資金狂熱。")
+        st.warning(f"⚠️ **分析結果落差顯著 (MAPE: {mape:.2f}%)**。實際價格突破長線預測，顯示近期發生極端溢價或資金狂熱。")
 
     fig_interactive = plot_plotly(model, forecast)
     for trace in fig_interactive['data']:
         if trace.name:
-            trace.name = trace.name.replace('Actual', '歷史訓練價格').replace('Predicted', 'AI 基準預測線').replace('yhat_lower', '悲觀下限區間').replace('yhat_upper', '樂觀上限區間')
+            trace.name = trace.name.replace('Actual', '實際價格').replace('Predicted', 'AI 基準預測線').replace('yhat_lower', '下限').replace('yhat_upper', '上限')
     
     fig_interactive.add_trace(go.Scatter(
         x=test_df['ds'], y=test_df['y'], mode='markers', 
         marker=dict(color='#DC2626', size=5, symbol='circle'), 
-        name='盲測實際價格', hovertemplate='<b>實際價格</b>: %{y:.2f}<extra></extra>'
+        name='預測價格', hovertemplate='<b>實際價格</b>: %{y:.2f}<extra></extra>'
     ))
     
     fig_interactive.update_layout(
@@ -248,6 +248,6 @@ else:
     true_future_start = data['Date'].max()
     future_table = forecast[forecast['ds'] > true_future_start][['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
     if not future_table.empty:
-        future_table.columns = ['日期', 'AI基準價格 (yhat)', '悲觀下限 (Lower)', '樂觀上限 (Upper)']
+        future_table.columns = ['日期', '預測價格', '下限 (Lower)', '上限 (Upper)']
         future_table['日期'] = future_table['日期'].dt.date
         st.dataframe(future_table.set_index('日期'), use_container_width=True)
