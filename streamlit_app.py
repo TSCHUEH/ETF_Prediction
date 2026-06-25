@@ -8,6 +8,7 @@ from prophet.plot import plot_plotly
 import plotly.graph_objs as go
 import warnings
 
+
 warnings.filterwarnings('ignore')
 
 # ================= 1. 網頁基礎設定 =================
