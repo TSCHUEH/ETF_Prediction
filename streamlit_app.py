@@ -119,8 +119,8 @@ else:
     calculated_volatility = daily_returns_calc.std() * np.sqrt(252) * 100
     
     delta = base_data['Close'].diff()
-    gain = (delta.where(delta > 0, 0)).rolling(window=14).mean()
-    loss = (-delta.where(delta < 0, 0)).rolling(window=14).mean()
+    gain = (delta.where(delta > 0, 0)).ewm(alpha=1/14, adjust=False).mean()
+    loss = (-delta.where(delta < 0, 0)).ewm(alpha=1/14, adjust=False).mean()
     rs = gain / loss
     rsi = 100 - (100 / (1 + rs))
     current_rsi = rsi.iloc[-1]
